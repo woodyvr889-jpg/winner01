@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FundsFlow Receipt</title>
+
+<style>
+
+:root {
+--gold: #ffd700;
+--bg: #0f0f0f;
+--card: #1c1c1c;
+--text: white;
+}
+
+body {
+background: var(--bg);
+color: var(--text);
+font-family: Arial;
+display: flex;
+justify-content: center;
+}
+
+.container {
+background: var(--card);
+padding: 30px;
+margin-top: 50px;
+border-radius: 15px;
+width: 400px;
+}
+
+h1 { color: var(--gold); }
+
+h2 { color: #00ff88; }
+
+.receipt {
+margin-top: 20px;
+padding: 15px;
+background: #111;
+border-radius: 10px;
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<h1 id="title"></h1>
+<h2 id="congrats"></h2>
+
+<h3>Your Prizes:</h3>
+<ul id="prizes"></ul>
+
+<div class="receipt">
+
+<h3>🧾 FUNDSFLOW RECEIPT</h3>
+
+<p>Date: <span id="date"></span></p>
+<p>Time: <span id="time"></span></p>
+
+<p>Customer: <span id="customer"></span></p>
+<p>Event: <span id="event"></span></p>
+
+<p>Amount Paid: £<span id="amount"></span></p>
+
+<p>Payment Method: <span id="payment"></span></p>
+
+<p>Points Awarded: (+<span id="points"></span> points)</p>
+
+<p>Status: ✅ PAID</p>
+
+<p>Processed by: James</p>
+
+</div>
+
+</div>
+
+<script>
+
+/* EDIT THIS SECTION ONLY */
+
+const DATA = {
+
+title: "Bidding Funds 2026",
+
+winnerName: "James",
+
+bidName: "Golden Owner Bid",
+
+prizes: [
+"x2 Lemming's Going Gold items - Canvas & Poster",
+"75,000 Points",
+"x2 £2 vouchers - Expire 01/06/2026"
+],
+
+date: "28/02/2026",
+
+time: "08:15",
+
+customer: "James",
+
+event: "Lemming's Going Gold - Gorilla Tag Bid",
+
+amount: "100",
+
+paymentMethod: "Card - stripe link",
+
+points: "1000"
+
+};
+
+/* DO NOT EDIT BELOW */
+
+document.getElementById("title").innerText = DATA.title;
+
+document.getElementById("congrats").innerText =
+"Congratulations, " + DATA.winnerName +
+"! You've won the " + DATA.bidName + "!";
+
+document.getElementById("date").innerText = DATA.date;
+document.getElementById("time").innerText = DATA.time;
+document.getElementById("customer").innerText = DATA.customer;
+document.getElementById("event").innerText = DATA.event;
+document.getElementById("amount").innerText = DATA.amount;
+document.getElementById("payment").innerText = DATA.paymentMethod;
+document.getElementById("points").innerText = DATA.points;
+
+const prizeList = document.getElementById("prizes");
+
+DATA.prizes.forEach(prize => {
+
+const li = document.createElement("li");
+li.innerText = prize;
+prizeList.appendChild(li);
+
+});
+
+</script>
+
+</body>
+</html>
